@@ -1,21 +1,83 @@
 // BMI_Calculator.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-
 #include "pch.h"
-#include <iostream>
+#include<iostream>
+#include<string>
+
+#include "BMI.h"
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+
+	string name;
+	int height;
+	double weight;
+
+	cout << "Enter your name: ";
+	cin >> name;
+
+	cout << "Enter your height: ";
+	cin >> height;
+	while (height <= 0) {
+		cout << "Please enter your height in positive numbers: ";
+		cin >> height;
+	}
+
+	cout << "Enter your weight: ";
+	cin >> weight;
+	while (weight <= 0) {
+		cout << "Please enter your height in positive numbers: ";
+		cin >> weight;
+	}
+
+	cout << endl;
+
+	BMI Patient_1(name, height, weight); //object patient created with three parameters using overloaded BMI constructor
+
+	cout << "Patient name: " << Patient_1.getName() <<
+		endl << "Height: " << Patient_1.getHeight() << " inch" <<
+		endl << "Weight: " << Patient_1.getWeight() << " pound" <<
+		endl << "Body Mass Index (BMI): " << Patient_1.calculateBMI() <<
+		endl << endl;
+
+
+	cout << "Enter your name: ";
+	cin >> name;
+
+
+	cout << "Enter your height: ";
+	cin >> height;
+	while (height <= 0) {
+		cout << "Please enter your height in positive numbers: ";
+		cin >> height;
+	}
+
+	cout << "Enter your weight: ";
+	cin >> weight;
+	while (weight <= 0) {
+		cout << "Please enter your height in positive numbers: ";
+		cin >> weight;
+	}
+
+	cout << endl;
+
+	BMI Patient_2;
+
+	Patient_2.setName(name);
+	Patient_2.setHeight(height);
+	Patient_2.setWeight(weight);
+
+
+
+	cout << "Patient name: " << Patient_2.getName() <<
+		endl << "Height: " << Patient_2.getHeight() << " inch" <<
+		endl << "Weight: " << Patient_2.getWeight() << " pound" <<
+		endl << "Body Mass Index (BMI): " << Patient_2.calculateBMI() <<
+		endl << endl;
+
+
+	return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
